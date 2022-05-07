@@ -5,11 +5,12 @@ const Create_found = () => {
   const [body,setBody]=useState('');
   const [author,setAuthor]=useState('');
   const [isPending,setIsPending]=useState('false');
+  const [isFound,setFound]=useState('found');
   const history=useHistory();
 
   const handleSubmit=(e)=> {
     e.preventDefault();
-    const blog ={title,body,author};
+    const blog ={title,body,author,isFound};
     /*console.log(blog);*/
 
     setIsPending(true);
@@ -29,24 +30,27 @@ const Create_found = () => {
   }
   return (
     <div className="create">
-      <h2>Add a New Blog</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Blog Title:</label>
-        <input type="text" required value={title} onChange={(e)=>setTitle(e.target.value)} /> 
-        <br></br>
-        <label>Blog Body:</label>
-        <textarea required  value={body} onChange={(e)=>setBody(e.target.value)} ></textarea>
-        <br></br>
-        <label>Blog author:</label>
-        <select onChange={(e)=> setAuthor(e.target.value)}>
-          <option value="Student">Student</option>
-          <option value="Professor">professor</option>
-          <option value="other">other</option>
-        </select><br></br>
-        {isPending && <button type="submit">Add blog</button>}
-        
-      </form>
-    </div>
+      
+    <h2>Add a Found Thing:</h2>
+    <p>Hello you have to submit the following form in order to share the found object:</p>
+    <form onSubmit={handleSubmit}>
+
+      <label className="blog-T">Blog Title:</label>
+       
+      <input placeholder="Please enter what you found" className="blog-B" type="text" required value={title} onChange={(e)=>setTitle(e.target.value)} /> 
+      
+      
+      <br></br>
+      <label className="blog-T">Blog Body:</label>
+      <textarea className="blog-BB" placeholder="Please enter your found thing." required  value={body} onChange={(e)=>setBody(e.target.value)} ></textarea>
+      <br></br>
+      <label className="blog-T">Blog author:</label>
+      <input className="blog-B" type="text" required placeholder="enter your name please" value={author} onChange={(e)=> setAuthor(e.target.value)}/>
+     <br></br>
+      {isPending && <button type="submit" className="Submit-B">Add blog</button>}
+      
+    </form>
+  </div>
   );
 }
  

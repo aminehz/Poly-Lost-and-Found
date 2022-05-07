@@ -7,13 +7,15 @@ import Login from './Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Create_lost from './Create_lost';
 import Create_found from './Create_found';
+import Title from './Title';
+import FoundItems from './FoundItems';
 
 function App() {
   return (
     <Router>
-      
       <div className="App">
-        <Navbar />
+        <Title/>
+        <Navbar/>
         <div className="App">
       <Route exact path="/login"> 
        <Login />
@@ -32,6 +34,9 @@ function App() {
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
+            </Route>
+            <Route path="/foundItems">
+              <FoundItems/>
             </Route>
           </Switch>
         </div>
