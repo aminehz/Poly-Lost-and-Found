@@ -12,7 +12,7 @@ const BlogList = ({ blogs }) => {
       <img src={montre} className="montre"/>
       <img src={ecouteurs} className="ecouteurs"/>
       <img src={portefeuille} className="portefeuille"/>
-   
+    
       {blogs.map(blog => (
         <div className="blog-preview" key={blog.id} >
           <article>
